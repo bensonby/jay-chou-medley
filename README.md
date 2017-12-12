@@ -70,7 +70,7 @@
 
 (need to change to slower tempo, and change key)
 
-不能說的秘密 + TBC
+不能說的秘密 + 蒲公英的約定
 
 ### verse 2
 
@@ -111,6 +111,7 @@
 ### episode 3
 
 (need to change to faster tempo)
+髮如雪, 菊花台, 說好的幸福呢
 
 ### verse 3
 
