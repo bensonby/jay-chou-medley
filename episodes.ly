@@ -45,12 +45,13 @@ makeOctaves = #(define-music-function (parser location arg mus) (integer? ly:mus
 
 upper-intro = \relative c'' {
   R1
-  r2 e8( g c e
-  e4. f8 d2)
-  d4( g8 b, c2)
-  % d4 g8 b, c2
-  <g, e'>4 q8 <a f'>~ q e' c d16 e~ e4
-  <g, e'>8 <a f'>~ q e' c d16 d %~ d2 r2
+  r2 e8\( g c e
+  e4. f8 d2\)
+  % d4\( g8 b, c2\)
+  R1
+  <g,, e'>4 q8 <a f'>~ q e' c d16 e~ e4
+  % <g, e'>8 <a f'>~ q e' c d16 d %~ d2 r2
+  r4 r2
   \makeOctaves 1 { e4 d e f d c d e }
 
   % a,8 c g' c,
@@ -133,6 +134,26 @@ lower-episode-one = \relative c' {
   e,,16 b' d e g4
 }
 
+upper-episode-two = \relative c'' {
+  << {
+    r8 g\( c d e g a c d4.\)
+  } \\ {
+    e,,4 d a' g
+    f'4.\( e16 d f4. f16 g
+    a4. g16 f a4~\) a16
+    fis\( g a
+    bes4. c16 a bes4 \tuplet 3/2 { c8 d f }
+    \makeOctaves -1 { ees8 bes' a f ees bes' a g
+    g2 fis\) }
+  } >>
+  b,,4 b8 b b c d d~ d g4. r2
+}
+
+lower-episode-two = \relative c {
+  c1 bes f2. fis4 g2 ees f f d1
+  g2 a b a
+}
+
 upper-midi = \relative c' {
   \set Staff.pedalSustainStyle = #'bracket
   \key c \major
@@ -142,6 +163,8 @@ upper-midi = \relative c' {
   \upper-intro
   R1
   \upper-episode-one
+  R1
+  \upper-episode-two
   \bar "|."
 }
 
@@ -154,6 +177,8 @@ upper-print = \relative c' {
   \upper-intro
   R1
   \upper-episode-one
+  R1
+  \upper-episode-two
   \bar "|."
 }
 
@@ -165,6 +190,8 @@ lower-midi = \relative c {
   \lower-intro
   R1
   \lower-episode-one
+  R1
+  \lower-episode-two
   \bar "|."
 }
 
@@ -176,6 +203,8 @@ lower-print = \relative c {
   \lower-intro
   R1
   \lower-episode-one
+  R1
+  \lower-episode-two
   \bar "|."
 }
 
