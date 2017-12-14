@@ -38,7 +38,7 @@ makeOctaves = #(define-music-function (parser location arg mus) (integer? ly:mus
 
 
 \header {
-  title = "Jay Chou Medley - episodes"
+  title = "Jay Chou Medley"
   subtitle = "For female voice and piano accompaniment"
   arranger = "Arranged by Benson"
 }
@@ -60,8 +60,6 @@ upper-intro = \relative c'' {
   % c, g'' b,, g''
 
   % R1
-  r8 g g c, c4 d8 e
-
 }
 
 lower-intro = \relative c {
@@ -86,8 +84,8 @@ lower-intro = \relative c {
   q b b b
   q c c c
   <gis, e'> d'' d d
-  <a, e'> c' c c
-  <f,, c'> a' a a
+  % <a, e'> c' c c
+  % <f,, c'> a' a a
   % a,8 c g' c,
   % f,8 g16 a g'8 c,
   % c, g' g' c,
@@ -106,7 +104,6 @@ upper-episode-one = \relative c''' {
   % e f, aes e' d f, aes d <c f> f, aes <c f> <c e> f, g e'
   e fis, a e' d fis, g d' b e, g b c d, e c'
   e f, aes e' d f, aes d <c f> f, aes <c f> <c e> f, g e'
-  r8 a,,16 b b b b g r8 g16 g g g8 c16
 }
 
 lower-episode-one = \relative c' {
@@ -130,8 +127,8 @@ lower-episode-one = \relative c' {
     <fis d'>2 e
     <d a'>2 g'
   } >>
-  a,16 e' a b c4
-  e,,16 b' d e g4
+  % a,16 e' a b c4
+  % e,,16 b' d e g4
 }
 
 upper-episode-two = \relative c'' {
@@ -146,13 +143,24 @@ upper-episode-two = \relative c'' {
     \makeOctaves -1 { ees8 bes' a f ees bes' a g
     g2 fis\) }
   } >>
-  b,,4 b8 b b c d d~ d g4. r2
 }
 
 lower-episode-two = \relative c {
   c1 bes f2. fis4 g2 ees f f d1
-  g2 a b a
 }
+
+melody-one = \relative c'' {
+  r8 g g c, c4 d8 e
+}
+melody-two = \relative c'' {
+  r8 a16 b b b b g r8 g16 g g g8 c16
+}
+melody-three = \relative c'' {
+  b4 b8 b b c d d~ d g4. r2
+}
+melody-ending = \relative c'' {
+}
+
 
 upper-midi = \relative c' {
   \set Staff.pedalSustainStyle = #'bracket
@@ -161,10 +169,12 @@ upper-midi = \relative c' {
   \tempo 4 = 72
   \time 4/4
   \upper-intro
-  R1
+  \melody-one
   \upper-episode-one
-  R1
+  \melody-two
   \upper-episode-two
+  \melody-three
+  \melody-ending
   \bar "|."
 }
 
@@ -175,10 +185,12 @@ upper-print = \relative c' {
   \tempo 4 = 72
   \time 4/4
   \upper-intro
-  R1
+  \melody-one
   \upper-episode-one
-  R1
+  \melody-two
   \upper-episode-two
+  \melody-three
+  \melody-ending
   \bar "|."
 }
 
@@ -188,10 +200,12 @@ lower-midi = \relative c {
   \clef bass
   \time 4/4
   \lower-intro
-  R1
+  #(skip-of-length melody-one)
   \lower-episode-one
-  R1
+  #(skip-of-length melody-two)
   \lower-episode-two
+  #(skip-of-length melody-three)
+  #(skip-of-length melody-ending)
   \bar "|."
 }
 
@@ -201,10 +215,12 @@ lower-print = \relative c {
   \clef bass
   \time 4/4
   \lower-intro
-  R1
+  #(skip-of-length melody-one)
   \lower-episode-one
-  R1
+  #(skip-of-length melody-two)
   \lower-episode-two
+  #(skip-of-length melody-three)
+  #(skip-of-length melody-ending)
   \bar "|."
 }
 
