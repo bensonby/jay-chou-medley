@@ -290,6 +290,8 @@ melody-ending = \relative c' {
   c8 des ees aes, aes4 bes aes r r2
 }
 
+drum-bass = \drummode { bd4. bd8 bd2 }
+drum-snare = \drummode { hh8 hh sn hh hh hh sn hh }
 
 upper-midi = \relative c' {
   \set Staff.pedalSustainStyle = #'bracket
@@ -377,6 +379,10 @@ guitarchords = \chordmode {
         \set Staff.midiMaximumVolume = #0.6
         \lower-midi
       }
+    >>
+    \new DrumStaff <<
+      \new DrumVoice { \repeat unfold 142 \drum-bass }
+      \new DrumVoice { \repeat unfold 142 \drum-snare }
     >>
   >>
   \midi {
