@@ -209,13 +209,12 @@ melody-two = \relative c' {
 
   a16 b' b b b a a r
   b16 b b b b c a r
-  a16 a a g g e e r
+  a16 a a g g e32( d) e16 r
   g16 g g e e d32( c) d16 r
   a16 b' b b b a a r
   b16 b b b b c a r
-  a16 a a g g e32( d) e16 gis
-  r2
-  c,8 b16 c
+  a16 a a g g e32( d) e16 g~( g8. e16 f8 e32 d c16)
+  c8 b16 c
 
   a16 c a c~ c8 a16 c~ c8 d16 c
   r4 a16 c a c~ c8 a16 c~ c8 e16 c
