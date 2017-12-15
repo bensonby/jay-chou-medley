@@ -193,8 +193,8 @@ melody-one = \relative c'' {
   e8 fis gis e r fis gis b d b
 
   r8 c, a' g a g~ g f f e f g a a~ a g r
-  c,8 c' b c c( g) g g g g4 f8 f~ f e r
-  c8 c' b c c( g) g g g g4 d'8 d~ d c r
+  c,8 c' b c c~ c g g g g4 f8 f~ f e r
+  c8 c' b c c~ c g g g g4 d'8 d~ d c r
   c,8 c' b c b~ b a r c, b' a b a~ a g r
   c,8 a' g a g~ g f f e f g a a~( a g) r
   f8 e4 g,8 d'
