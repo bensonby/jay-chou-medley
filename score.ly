@@ -258,7 +258,7 @@ melody-three = \relative c' {
   b,8 d a' g c, c b16 b~ b a8.
   fis'8 g a a a fis16 a~ a g8.
   e8 fis g fis16 g~ g8 r16 fis e8 fis g r
-  r4 d'
+  r4 \transpose c des \relative c' { d'
 
   b8 a g b b4. c8 a4. r8
   a4 d8 fis, g4. r8
@@ -274,7 +274,7 @@ melody-three = \relative c' {
   b16 b b b~ b b b b~ b c b a r
   fis16 g d'~ d d d d~ d d d a~ a b a g r
   d16 e g d' c c b b a a g b( a) r d,16
-  b'8 a16 a~ a8 g16 r
+  b'8 a16 a~ a8 g16 } r
 }
 
 melody-ending = \relative c' {
