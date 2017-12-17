@@ -192,7 +192,7 @@ melody-one = \relative c'' {
   r8 c a' a r a g g r g f e d e f e~ e4 r4
   e8 fis gis e r fis gis b d b
 
-  r8 c, a' g a g~ g f f e f g a a~ a g r
+  r8 c a g a g~ g f f e f g a a~ a g r
   c,8 c' b c c~ c g g g g4 f8 f~ f e r
   c8 c' b c c~ c g g g g4 d'8 d~ d c r
   c,8 c' b c b~ b a r c, b' a b a~ a g r
@@ -258,17 +258,24 @@ melody-three = \relative c' {
   fis'8 g a a a fis16 a~ a g8.
   e8 fis g fis16 g~ g8 r16 fis e8 fis g r
   % r4 \transpose c des \relative c' { d'
-  r4 d'
+  r4 d' d b
+  a16 b e,8 g16 a d b a8 r r16
+  d16 d b a b d,8 a'16 b d a g8 r16
 
-  b8 a g b b4. c8 a4. r8
-  a4 d8 fis, g4. r8
-  b8 c d g, g4 a8 b16 b~ b4 r
-  b,8 d g b b4. c8 a2
-  a4 d8 fis, g4. r8
-  b8 c d g, g4 a8( g) g4 r4
-  e'8 d b16( a) g8 b4. c8 a4. r8
+  g16 g fis e g~ g8 r16 g g fis e g~ g8 r16
+  g16 g fis g a c8 b16 b~ b a g b
+
+  % b8 a g b b4. c8 a4. r8
+  % a4 d8 fis, g4. r8
+  % b8 c d g, g4 a8 b16 b~ b4 r
+  % b,8 d g b~
+  % b8 r b16 a g b~ b8 r
+  % a16 g fis a~ a g fis a~ a d d a~ a g8. r4
+  e8 d b16( a) g8 b4. c8 a4. r8
   e'8 d4 fis,8 g4. r8
   b8 c d g, g4 a8 b16 b~ b8 r
+
+
 
   \tuplet 3/2 4 { g8 a b c b c } d8 g,
   b16 b b b~ b b b b~ b c b a r
