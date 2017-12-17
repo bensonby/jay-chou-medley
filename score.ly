@@ -389,8 +389,8 @@ guitarchords = \chordmode {
       }
     >>
     \new DrumStaff <<
-      \new DrumVoice { \repeat unfold 142 \drum-bass }
-      \new DrumVoice { \repeat unfold 142 \drum-snare }
+      \new DrumVoice { \repeat unfold 138 \drum-bass }
+      \new DrumVoice { \repeat unfold 138 \drum-snare }
     >>
   >>
   \midi {
