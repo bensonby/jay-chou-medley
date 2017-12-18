@@ -144,21 +144,63 @@ upper-episode-two = \relative c'' {
     \tempo 4 = 63 e
     \tempo 4 = 60 g
     \tempo 4 = 56 a
-    \tempo 4 = 50 c
-    \tempo 4 = 74 d4.\)
+    \tempo 4 = 50 b
+    \tempo 4 = 74 cis4.\)
   } \\ {
     e,,4 d a' g
-    f'4.\( e16 d f4. f16 g
-    a4. g16 f a4~\) a16
-    fis\( g a
-    bes4. c16 a bes4 \tuplet 3/2 { c8 d f }
-    \makeOctaves -1 { ees8 bes' a f ees bes' a g
-    g2 fis\) }
+    e'4.\( dis16 cis e4. e16 fis
+    gis4. fis16 e gis4~\) gis16
+    eis\( fis gis
+    a4. b16 gis a4 \tuplet 3/2 { b8 cis e }
+    \makeOctaves -1 { d8 a' gis e d a' gis fis
+    fis2 eis\) }
   } >>
 }
 
 lower-episode-two = \relative c {
   c1 bes f2. fis4 g2 ees f f d1
+}
+lower-episode-two = \transpose bes a { \lower-episode-two }
+
+lower-one = \relative c {
+  a2 f c c4 b a'2 f c c
+  a2 b c1 a2 b c1
+  a2 b c d4 e f2 <f aes> <g c d>2 <g b d>
+  c1 b2. gis4 a1 <g e'> f2 <f d' g> e2 a d <d aes' c f> <g, c d> g
+  c1 b a <g c> f e2 a d1 <g, c f>2 <g aes' c f>4 <g d' f>
+  c1 a f2 <g c> c1 e2 gis a g f d g g
+  c1 c a a f e d <g c d>
+}
+
+lower-two = \relative c {
+  a2 e f g a e f g4 gis
+  a2 g f e a g f e
+  d1 a d g
+  c2 b a g f e d g
+  c2 b a <g b e> f e d g
+  c2 b a <g b e> f e d g
+}
+
+lower-three = \relative c {
+  \key g \major
+  g2 a b a g b e d
+  c <c d fis a> b e a, a d d
+  g fis e d c b a d
+  e b c b a d g, g c, d
+  g f e4. ees8~ ees2 d d g <g f'>
+  c,2 <c d fis a> b e a b e d
+  c <c d fis a> b e a, d r4 r r r
+  c2 c b e a, d g, <g f'>
+  c2 c b e a, d g, <g f'>
+  c2 c b e a, d g,4
+}
+
+lower-ending = \relative c {
+  r4 r2
+  \key aes \major
+  des2 <des ees g bes> c f
+  bes, ees aes <aes ges'>
+  des, des c f bes, ees aes,1
 }
 
 melody-one = \relative c'' {
@@ -237,6 +279,7 @@ melody-two = \relative c' {
 
 }
 melody-three = \relative c' {
+  \key g \major
   b4 b8 b b c d d~ d g4. r4
   g,8 a b b b b b e fis a~ a g4. r2
   e4 e8 e e fis g a~ a d,4. r4
@@ -288,15 +331,19 @@ melody-three = \relative c' {
 melody-ending = \relative c' {
   c16. c32~ c16 ees ees16. ees32~ ees16 aes
   aes16. aes32~ aes16 bes
-  c8 c16 c~ c8 bes16 bes~ bes16 r
-  c8 bes aes ees bes'16 bes~ bes8 g16 aes~ aes4 r
-  c8 des ees aes, aes4 bes8( c) c4 r
-  c,8 ees aes c~
-  c8 r c16 bes aes c~ c8 r
-  bes16 aes g bes~ bes aes g bes~ bes ees ees bes~ bes aes8. r4
-
+  \key aes \major
+  c8 c16 c~ c8 bes16 bes~ bes8 r
+  g8 aes bes g16 ees~ ees8 bes'16 bes~ bes aes8. r4
+  c8 des ees aes, aes4 bes8 c16 c~ c4 r
+  c,8 ees aes c c4. des8 bes4. r8
+  bes4 ees8 g, aes4 r
   c8 des ees aes, aes4 bes aes r r2
 }
+
+lower-three = \transpose aes g { \lower-three }
+lower-ending = \transpose aes g { \lower-ending }
+melody-three = \transpose aes g { \melody-three }
+melody-ending = \transpose aes g { \melody-ending }
 
 drum-bass = \drummode { bd4. bd8 bd2 }
 drum-snare = \drummode { hh8 hh sn hh hh hh sn hh }
@@ -339,12 +386,12 @@ lower-midi = \relative c {
   \clef bass
   \time 4/4
   \lower-intro
-  #(skip-of-length melody-one)
+  \lower-one
   \lower-episode-one
-  #(skip-of-length melody-two)
+  \lower-two
   \lower-episode-two
-  #(skip-of-length melody-three)
-  #(skip-of-length melody-ending)
+  \lower-three
+  \lower-ending
   \bar "|."
 }
 
@@ -354,12 +401,12 @@ lower-print = \relative c {
   \clef bass
   \time 4/4
   \lower-intro
-  #(skip-of-length melody-one)
+  \lower-one
   \lower-episode-one
-  #(skip-of-length melody-two)
+  \lower-two
   \lower-episode-two
-  #(skip-of-length melody-three)
-  #(skip-of-length melody-ending)
+  \lower-three
+  \lower-ending
   \bar "|."
 }
 
