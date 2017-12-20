@@ -96,12 +96,13 @@ upper-episode-one = \relative c''' {
   d16 e, g d' c d, e c' b d, e b' c d, e c'
   d e, g d' c e, g c b d, e b' c d, e c'
   e fis, a e' d fis, a d c fis, a c d fis, a d
+  \tempo 4= 73
   e f, aes e'
-  \tempo 4 = 76
+  \tempo 4 = 69
   d f, aes d
-  \tempo 4 = 68
+  \tempo 4 = 63
   <c f> f, aes <c f>
-  \tempo 4 = 60
+  \tempo 4 = 56
   <c e> f, g e'
 
   \tempo 4 = 66
@@ -301,7 +302,7 @@ melody-three = \relative c' {
   fis'8 g a a a fis16 a~ a g8.
   e8 fis g fis16 g~ g8 r16 fis e8 fis g r
   % r4 \transpose c des \relative c' { d'
-  r4 d' d b
+  r4 \tempo 4 = 68 d' d b
   a16 b e,8 g16 a d b a8 r r16
   d16 d b a b d,8 a'16 b d a g8 r16
 
@@ -352,7 +353,7 @@ upper-midi = \relative c' {
   \set Staff.pedalSustainStyle = #'bracket
   \key c \major
   \clef treble
-  \tempo 4 = 80
+  \tempo 4 = 76
   \time 4/4
   \upper-intro
   \melody-one
@@ -368,7 +369,7 @@ upper-print = \relative c' {
   \set Staff.pedalSustainStyle = #'bracket
   \key c \major
   \clef treble
-  \tempo 4 = 80
+  \tempo 4 = 76
   \time 4/4
   \upper-intro
   \melody-one
