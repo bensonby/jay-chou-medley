@@ -303,7 +303,7 @@ melody-three = \relative c' {
   e8 fis g fis16 g~ g8 r16 fis e8 fis g r
   % r4 \transpose c des \relative c' { d'
   r4 \tempo 4 = 68 d' d b
-  a16 b e,8 g16 a d b a8 r r16
+  a16 b e,8 a16 b d b a8 r r16
   d16 d b a b d,8 a'16 b d a g8 r16
 
   g16 g fis e g~ g8 r16 g g fis e g~ g8 r16
